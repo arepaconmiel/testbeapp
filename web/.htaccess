@@ -1,0 +1,15 @@
+# Set up variable for our app
+SetEnv BC_AUTH_SERVICE "https://login.bigcommerce.com"
+SetEnv BC_CLIENT_ID "7xxxxx"
+SetEnv BC_CLIENT_SECRET "etprsizegxxxxxxx"
+SetEnv BC_CALLBACK_URL "https://my-first-bc-app.heroku.com/auth/callback"
+
+RewriteEngine On
+
+# Redirect Trailing Slashes...
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Handle Front Controller...
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
