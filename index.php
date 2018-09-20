@@ -18,6 +18,11 @@ $dotenv->load();
 $app = new Application();
 $app['debug'] = true;
 
+$app->get('/', function (Request $request) use ($app) {
+
+	return 'Welcome jose villa :P';
+});
+
 $app->get('/jose', function (Request $request) use ($app) {
 
 	return 'Welcome josepablo :P';
